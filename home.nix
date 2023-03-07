@@ -252,8 +252,17 @@
         color = {
           ui = true;
         };
+        commit = {
+          gpgsign = true;
+        };
         diff = {
           colorMoved = "default";
+        };
+        gpg = {
+          format = "ssh";
+          ssh = {
+            program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
+          };
         };
         merge = {
           conflictstyle = "zdiff3";
@@ -266,6 +275,9 @@
         };
         init = {
           defaultBranch = "main";
+        };
+        user = {
+          signingKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICbwmZz8KMWUkLJodyjx4Bno6sFT9u/HRpbQdYhk4jUm";
         };
         # Clone git repos with URLs like "gh:alexpearce/dotfiles"
         url."git@github.com:" = {
